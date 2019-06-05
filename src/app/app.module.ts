@@ -16,6 +16,8 @@ import { environment } from '../environments/environment';
 import { AppEffects } from './app.effects';
 import { UserApiService } from './shared/services/user-api.service';
 import { PopupComponent } from './components/popup/popup.component';
+import { OutsideDirective } from './shared/directives/outside.directive';
+import { CopyClipboardDirective } from './shared/directives/copy-clipboard.directive';
 
 
 
@@ -23,7 +25,9 @@ import { PopupComponent } from './components/popup/popup.component';
   declarations: [
     AppComponent,
     UserComponent,
-    PopupComponent
+    PopupComponent,
+    OutsideDirective,
+    CopyClipboardDirective
   ],
   imports: [
     BrowserModule,

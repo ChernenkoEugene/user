@@ -1,14 +1,11 @@
 <div class="user-container">
-      <div class="user-field">
-        <span class="user-field-title">User name:</span>
-        <span class="user-field-value">{{ user.name }}</span>
-      </div>
-      <div class="btns">
-        <button (click)="openPopup(user)" class="button button-primary">Показать Еще</button>
-      </div>
+  <div class="user-field">
+    <span class="user-field-value">{{ user.name }}</span>
+  </div>
+  <div class="btns">
+    <button (click)="openPopup(user, $event)" class="button">Показать Еще</button>
+  </div>
 </div>
 
-<app-popup *ngIf="popup && popup.open"
-  [popup]="popup"
-  [user]="user">
+<app-popup *ngIf="popup && popup.open" [popup]="popup" [user]="user">
 </app-popup>

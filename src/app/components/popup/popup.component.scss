@@ -1,3 +1,5 @@
+$break-small: 960px;
+
 .popup-bg {
   background: rgba(0, 0, 0, 0.6);
   position: fixed;
@@ -12,12 +14,65 @@
     background-color: #747474;
     padding: 20px;
     border-radius: 6px;
-    width: 300px;
+    color: #fff;
+    font-size: 18px;
+    position: relative;
+    max-width: 90%;
 
+    .popup-btn-close {
+      width: 25px;
+      height: 25px;
+      position: absolute;
+      top: 20px;
+      font-family: Arial;
+      right: 20px;
+      background: #ddd;
+      border-radius: 50%;
+      cursor: pointer;
+      color: #000;
+      text-align: center;
+      line-height: 26px;
+      box-shadow: 1px 3px 4px rgba(0, 0, 0, 0);
+      transition: all 0.5s ease;
+
+      &:hover {
+        box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.5);
+
+      }
+    }
+    .popup-title {
+      font-size: 22px;
+      text-align: center;
+      font-weight: bold;
+    }
+    .user-details {
+      display: flex;
+    }
+
+    .user-details-item {
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+      text-align: center;
+      font-size: 16px;
+
+      > div:first-child {
+        font-weight: bold;
+        font-size: 18px;
+      }
+    }
+    @media screen and (max-width: $break-small) {
+      .user-details {
+        flex-direction: column;
+        .user-details-item {
+          padding-bottom: 0;
+        }
+      }
+    }
     .btns {
       display: flex;
       justify-content: center;
-
+      padding-top: 25px;
       button {
         margin: 10px;
       }
@@ -35,15 +90,13 @@
       border-bottom: solid 1px #59460c;
       transition: all 0.5s ease;
       cursor: pointer;
+      background-color: #fbaf55;
+      box-shadow: 2px 2px 2px rgba(89, 70, 12, 0.9);
 
       &:hover {
         -webkit-transform: translateY(-1px);
         transform: translateY(-1px);
         box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.5);
-      }
-      &.button-primary {
-        background-color: #fbaf55;
-        box-shadow: 2px 2px 2px rgba(89, 70, 12, 0.9);
       }
     }
   }

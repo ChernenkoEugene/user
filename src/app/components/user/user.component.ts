@@ -16,7 +16,10 @@ const TITLE_KEY = 'Title';
 export class UserComponent implements OnInit, OnDestroy {
   private user$: Observable<{}> = this.store.select(fromRoot.getUserState);
   private user: {} = {};
-  private popup: Popup;
+  private popup: Popup = {
+    open : false,
+    copyState: false
+  };
   private userSubscription: Subscription;
 
   constructor(public store: Store<fromRoot.State>) {}
@@ -26,13 +29,9 @@ export class UserComponent implements OnInit, OnDestroy {
     this.userSubscription = this.user$.subscribe(user => this.user = user);
   }
 
-  private openPopup(user: {}) {
-    this.popup = {
-      open: true
-    };
-  }
-  private closePopup() {
-    this.popup.open = false;
+  private openPopup(user: {}, event: Event) {
+    this.popup.open = true;
+    event.stopPropagation();
   }
 
   ngOnDestroy() {

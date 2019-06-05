@@ -1,8 +1,52 @@
 <div class="popup-bg">
-  <div class="popup">
-      <div class="popup-btn-close" (click)="cancel()">X</div>
-  <div class="user-details">
-
-  </div>
+  <div class="popup" appOutside (clickedOutside)="close()">
+    <div class="popup-title">{{user.name}}</div>
+    <div class="popup-btn-close" (click)="close()">X</div>
+    <div class="user-details">
+      <div class="user-details-item">
+        <div>id</div>
+        <div>{{user.id}}</div>
+      </div>
+      <div class="user-details-item">
+        <div>username</div>
+        <div>{{user.username}}</div>
+      </div>
+      <div class="user-details-item">
+        <div>email</div>
+        <div>{{user.email}}</div>
+      </div>
+      <div class="user-details-item">
+        <div>address</div>
+        <div>
+          <div>{{user.address.street}}</div>
+          <div>{{user.address.suite}}</div>
+          <div>{{user.address.city}}</div>
+          <div>{{user.address.zipcode}}</div>
+          <div>{{user.address.geo.lat}}</div>
+          <div>{{user.address.geo.lng}}</div>
+        </div>
+      </div>
+      <div class="user-details-item">
+        <div>phone</div>
+        <div>{{user.phone}}</div>
+      </div>
+      <div class="user-details-item">
+        <div>website</div>
+        <div>{{user.website}}</div>
+      </div>
+      <div class="user-details-item">
+        <div>company</div>
+        <div>
+          <div>{{user.company.name}}</div>
+          <div>{{user.company.catchPhrase}}</div>
+          <div>{{user.company.bs}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="btns">
+       <input class="copy-btn button" type="button" role="button" [value]="popup.copyState? 'Скопировано' : 'Скопировать id'"
+       [appCopyClipboard]="user.id"
+       (copied)="copy($event)">
+    </div>
   </div>
 </div>

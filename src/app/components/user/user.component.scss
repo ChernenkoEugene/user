@@ -1,29 +1,7 @@
-.movies {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.movies-list {
-  margin: 0;
-  padding: 0;
-}
-.movies-list li {
-  display: flex;
-  flex-direction: column;
+.user-field {
+  font-size: 22px;
   text-align: center;
-  padding: 20px;
-  background: #747474;
-  border-radius: 6px;
-  margin: 15px auto;
-  font-size: 20px;
-  .movie-field {
-
-    .movie-field-title {
-      font-weight: bold;
-      padding-right: 10px;
-    }
-  }
+  padding-bottom: 30px;
 }
 .btns {
   display: flex;
@@ -45,14 +23,13 @@
   border-bottom: solid 1px #59460c;
   transition: all 0.5s ease;
   cursor: pointer;
+  background-color: #fbaf55;
+  box-shadow: 2px 2px 2px rgba(89, 70, 12, 0.9);
 
   &:hover {
     -webkit-transform: translateY(-1px);
     transform: translateY(-1px);
     box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.5);
   }
-  &.button-primary {
-    background-color: #fbaf55;
-    box-shadow: 2px 2px 2px rgba(89, 70, 12, 0.9);
-  }
+
 }

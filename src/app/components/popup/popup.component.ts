@@ -19,13 +19,19 @@ export class PopupComponent implements OnInit {
   @Input()
   popup: Popup;
 
+  private copyState = false;
+
   constructor(public store: Store<fromRoot.State>) {}
 
   ngOnInit() {
   }
 
-  private cancel() {
+  private close() {
     this.popup.open = false;
+    this.popup.copyState = false;
   }
 
+  private copy(event: Event) {
+    this.popup.copyState = true;
+  }
 }
